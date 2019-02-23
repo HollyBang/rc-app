@@ -9,10 +9,6 @@ export default class mainComponent extends Component {
     return (
       <Header/>
 
-      <main className="main">
-        <div className="container grid">
-        </div>
-      </main>
     )
   }
 }
