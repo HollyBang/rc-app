@@ -1,13 +1,24 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const Settings = () => {
-  return (
-    <div className="settings">
-      <a href="#" className="settings__link">
-        <img src="assets/img/settings.svg" alt="settings" className="settings__icon"/>
-      </a>
-    </div>
-  );
-};
+export default class Settings extends Component {
 
-export default Settings;
+  setLanguage = (e) => {
+    this.props.changeLanguage(e.target.value);
+  };
+
+  render() {
+    const { languages } = this.props;
+    return (
+      <div className="settings">
+        <a href="#" className="settings__link">
+          <img src="assets/img/settings.svg" alt="settings" className="settings__icon"/>
+        </a>
+        <select onChange={this.setLanguage}>
+            <option value="en">{languages.languages.en}</option>
+            <option value="ru">{languages.languages.ru}</option>
+            <option value="ar">{languages.languages.ar}</option>
+        </select>
+      </div>
+    );
+  }
+}
