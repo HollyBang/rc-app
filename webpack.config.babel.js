@@ -75,13 +75,17 @@ module.exports = (env, options) => {
                         },
                     ],
                 },
+                // {
+                //     test: /\.(less|css)$/,
+                //     use: [
+                //         MiniCssExtractPlugin.loader,
+                //         'css-loader',
+                //         'less-loader',
+                //     ],
+                // },
                 {
-                    test: /\.(less|css)$/,
-                    use: [
-                        MiniCssExtractPlugin.loader,
-                        'css-loader',
-                        'less-loader',
-                    ],
+                    test: /\.css$/,
+                    loader: 'style-loader!css-loader'
                 },
                 {
                     test: /\.(svg|png)$/,

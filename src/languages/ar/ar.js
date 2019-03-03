@@ -8,7 +8,8 @@ export default {
         ar: 'Arabic-ar',
     },
     dialogResources: {
-        
+        settingsTitle: 'Settings-ar',
+        settingsSaveBtn: 'Save-ar',
     },
     errorCode: {
 
