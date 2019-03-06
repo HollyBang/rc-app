@@ -18,7 +18,7 @@ export function* createRequest(action) {
         // yield put({ type: GET_NEWS });
         debugger;
         let response = yield call(fetch, `http://news.finversia.ru/feed/filter/full/?count=20&offset=0&from=1504259520&to=1504259520`);
-        console.log(response);
+        debugger;
         const newsList = yield call([response, response.json]);
         console.log(newsList)
         yield put({
