@@ -2,6 +2,12 @@ import React, { Component } from 'react';
 
 export default class News extends Component {
 
+  constructor(props) {
+    super(props);
+    debugger;
+    this.props.getNews();
+  }
+
   render() {
 
     console.log('render --------------> News');

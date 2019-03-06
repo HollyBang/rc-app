@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Header from '../Header/Header.jsx';
 import Footer from '../Footer/Footer.jsx';
 import './general.css';
-import News from '../News/News.jsx';
+import News from '../News/index';
 
 export default class mainComponent extends Component {
   render() {
