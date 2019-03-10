@@ -6,26 +6,13 @@ export default function* watchNewsSaga() {
     yield takeEvery(constants.GET_NEWS, createRequest)
 }
 
-// function* getNews(action) {
-//     const payload = {};
-//     yield put(actions.toggleSettings(payload));
-// }
-
 export function* createRequest(action) {
-    debugger
-    console.log('action GET_NEWS action', action)
     try {
-        // yield put({ type: GET_NEWS });
-        debugger;
-        let response = yield call(fetch, `http://news.finversia.ru/feed/filter/full/?count=20&offset=0&from=1504259520&to=1504259520`);
-        debugger;
+        // let response = yield call(fetch, `http://news.finversia.ru/feed/filter/full/?count=20&offset=0&from=0&to=1504259520`);
+        let response = yield call(fetch, `http://news.finversia.ru/feed/filter/full/?count=10&offset=0`);
         const newsList = yield call([response, response.json]);
-        console.log(newsList)
-        yield put({
-            type: GET_NEWS_STORE, payload: {
-                newsList,
-            }
-        });
+        console.log(newsList);
+        yield put(actions.getNewsStore(newsList));
     } catch (error) {
         console.log('createRequest error', error);
     }

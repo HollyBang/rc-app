@@ -3,7 +3,7 @@ import Component from './News.jsx';
 import * as actions from './actions';
 
 const mapStateToProps = state => ({
-
+    news: state.news
 });
 
 const mapDispatchToProps = dispatch => ({

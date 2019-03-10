@@ -561,6 +561,11 @@ section {
 
 .news-block {
   grid-area: news;
+  color: white
+}
+
+.news-block__btn {
+  margin: 7px;
 }
 
 .quotes-block {

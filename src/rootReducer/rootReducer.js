@@ -2,9 +2,7 @@ import { combineReducers } from 'redux';
 import constants from '../constants/constants';
 import lang from '../languages/en/en'
 
-const initialState = {
-    news: []
-}
+const newsInitialState = [];
 
 const languageReducer = (state = lang, action) => {
     switch(action.type) {
@@ -19,12 +17,13 @@ const languageReducer = (state = lang, action) => {
     }
 };
 
-const newsReducer = (state = initialState, action) => {
+const newsReducer = (state = newsInitialState, action) => {
     switch(action.type) {
         case constants.GET_NEWS_STORE: {
-            return {
+            return [
+                ...state,
                 ...action.payload
-            }
+            ]
         }
         default: {
             return state;
@@ -35,5 +34,5 @@ const newsReducer = (state = initialState, action) => {
 const rootReducer = combineReducers({
     languages: languageReducer,
     news: newsReducer,
-})
+});
 export default rootReducer;

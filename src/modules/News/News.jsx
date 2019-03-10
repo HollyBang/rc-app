@@ -1,20 +1,27 @@
 import React, { Component } from 'react';
+import NewsItem from './components/NewsItem.jsx';
 
 export default class News extends Component {
 
   constructor(props) {
     super(props);
-    debugger;
     this.props.getNews();
   }
 
   render() {
 
     console.log('render --------------> News');
-    const { languages } = this.props;
+    const { news, languages } = this.props;
+
+    const newsList = news.map((item, i) => <NewsItem key={item.ID} news={item} languages={languages} />)
+
     return (
       <section className="news-block">
-        <div style={{color:'white'}}>{languages.resources.hello}</div>
+        <div>
+          <span>{languages.resources.newsModuleTitle}</span>
+          <button type="button" className="close"><span style={{color: 'white'}}>×</span></button>
+        </div>
+        {newsList}
       </section>
     )
   }

@@ -1,8 +1,5 @@
 import constants from '../../constants/constants';
 
-export const getNews = payload => {
-    return {
-        type: constants.GET_NEWS,
-        payload: payload
-    }
-};
+export const getNews = payload => ({ type: constants.GET_NEWS, payload });
+
+export const getNewsStore = payload => ({ type: constants.GET_NEWS_STORE, payload });
