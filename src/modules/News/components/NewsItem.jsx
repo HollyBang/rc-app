@@ -9,10 +9,10 @@ const imgStyle = {
 export default class NewsItem extends Component {
 
   render() {
-    const { news, languages } = this.props;
+    const { news, languages, readNewsCallback } = this.props;
 
     let PublishDate = new Date(news.PublishDate * 1000);
-    
+
     return (
       <Media>
         <Media left>
@@ -24,8 +24,8 @@ export default class NewsItem extends Component {
           </Media>
           {/* {news.Description} */}
           {PublishDate.toLocaleDateString()} {PublishDate.toLocaleTimeString()}
-          <br/>
-          <Button className="news-block__btn" size="sm">{languages.resources.newsReadMore}</Button>
+          <br />
+          <Button className="news-block__btn" size="sm" onClick={readNewsCallback}>{languages.resources.newsReadMore}</Button>
           <Button className="news-block__btn" size="sm">{languages.resources.newsRequestNew}</Button>
         </Media>
       </Media>

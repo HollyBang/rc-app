@@ -30,7 +30,7 @@ export default class Settings extends Component {
                 <a href="#" className="settings__link" onClick={this.toggle}>
                     <img src="assets/img/settings.svg" alt="settings" className="settings__icon"/>
                 </a>
-                <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
+                <Modal isOpen={this.state.modal} toggle={this.toggle}>
                     <ModalHeader toggle={this.toggle}>{languages.dialogResources.settingsTitle}</ModalHeader>
                     <ModalBody>
                         <Form inline onSubmit={(e) => e.preventDefault()}>

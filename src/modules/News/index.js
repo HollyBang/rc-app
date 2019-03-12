@@ -7,7 +7,9 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    getNews: (payload) => dispatch(actions.getNews(payload))
+    getNews: (payload) => dispatch(actions.getNews(payload)),
+    readNews: (payload) => dispatch(actions.readNews(payload)),
+    closeNews: (payload) => dispatch(actions.closeNews(payload))
 });
 
 export default connect(
