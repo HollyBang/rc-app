@@ -1,6 +1,8 @@
 export default {
     resources: {
-        hello: 'Hello-ar',
+        newsModuleTitle: 'Economic News-ar',
+        newsReadMore: 'Read more-ar',
+        newsRequestNew: 'Request new-ar',
     },
     languages: {
         en: 'English-ar',

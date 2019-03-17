@@ -1,6 +1,8 @@
 export default {
     resources: {
-        hello: 'Привет',
+        newsModuleTitle: 'Экономические новости',
+        newsReadMore: 'Читать далее',
+        newsRequestNew: 'Запрость новую',
     },
     languages: {
         en: 'Английский',
